@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Map my friends</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style type="text/css">
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }</style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+      var myLatLng = {lat: 10.0127941, lng: 76.3285429};
+
+      // Create a map object and specify the DOM element for display.
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: myLatLng,
+        scrollwheel: true,
+        zoom: 4
+      });
+
+      // Create a marker and set its position.
+      var marker = new google.maps.Marker({
+        map: map,
+        position: myLatLng,
+        title: 'Hello World!'
+      });
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCViQOfJOIZWMZv9Ue_VrXlsjmp-7Vn2VY&callback=initMap"
+    async defer></script>
+  </body>
+</html>
