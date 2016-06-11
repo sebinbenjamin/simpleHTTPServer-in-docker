@@ -1,5 +1,10 @@
 FROM    ubuntu
 
+#install python
+RUN apt-get update
+RUN apt-get -y install python
+RUN apt-get clean
+
 # Copy html
 ADD static/ /src
 RUN cd /src
